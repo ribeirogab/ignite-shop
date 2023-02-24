@@ -20,4 +20,15 @@
     font-family: 'Poppins';
     font-weight: 400;
   }
+
+  img {
+    object-fit: cover;
+  }
+
+  .home-container {
+    width: 100%;
+    max-width: calc(100vw - ((100vw - theme(spacing.container)) / 2));
+    margin-left: auto;
+    min-height: 656px;
+  }
 }

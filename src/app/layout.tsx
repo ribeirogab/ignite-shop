@@ -12,8 +12,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <head />
       <body className={inter.className}>
-        <div className="flex flex-col items-start justify-center min-h-screen">
-          <header className="py-8 w-full max-w-6xl my-0 mx-auto">
+        <div className="flex min-h-screen flex-col items-start justify-center">
+          <header className="my-0 mx-auto w-full max-w-container py-8">
             <Image src={logoSvg} alt="Logo" />
           </header>
           {children}
