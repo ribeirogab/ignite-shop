@@ -1,6 +1,10 @@
 import { Carousel } from '@/components/Carousel';
 import { Product } from '@/components/Product';
 
+export const metadata = {
+  title: 'Home',
+};
+
 export default function Home() {
   return (
     <main className="home-container flex gap-12">

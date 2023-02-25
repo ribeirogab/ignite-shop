@@ -5,6 +5,13 @@ import { ReactNode } from 'react';
 import logoSvg from '@/assets/logo.svg';
 import '@/styles/globals.css';
 
+export const metadata = {
+  title: {
+    default: 'Ignite Shop',
+    template: '%s | Ignite Shop',
+  },
+};
+
 const inter = Inter({ subsets: ['latin'], weight: '400' });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
