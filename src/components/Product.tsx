@@ -19,7 +19,6 @@ export const Product = () => {
         bg-gradient-to-b
         from-[#1ea483]
         to-[#7465d4]
-        p-1
       "
     >
       <Image src={tshirt1} width={520} height={480} alt="Camiseta 1" />

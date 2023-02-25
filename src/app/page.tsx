@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <main className="home-container flex gap-12">
       <Carousel
+        perView={3}
         items={[
           { key: 1, element: <Product /> },
           { key: 2, element: <Product /> },

@@ -6,23 +6,30 @@ import { ReactNode } from 'react';
 
 type CarouselProps = {
   items: { key: string | number; element: ReactNode }[];
-  gap?: string;
+  spacing?: number;
+  perView?: number;
 };
 
-export const Carousel = ({ items, gap = '3rem' }: CarouselProps) => {
+export const Carousel = ({
+  spacing = 48,
+  perView = 2,
+  items,
+}: CarouselProps) => {
   const [sliderRef] = useKeenSlider({
     slides: {
-      perView: 3,
+      perView,
+      spacing,
     },
   });
 
   return (
-    <div ref={sliderRef} className={`keen-slider gap-[${gap}]`}>
+    <div ref={sliderRef} className="keen-slider">
       {items.map((item) => (
         <div key={item.key} className="keen-slider__slide">
           {item.element}
         </div>
       ))}
+      <div className="keen-slider__slide" />
     </div>
   );
 };
