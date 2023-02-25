@@ -38,5 +38,5 @@ module.exports = {
       '2xl': '2rem',
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [],
 };

@@ -13,6 +13,7 @@
         "*.jsx"
       ],
       "rules": {
+        "tailwindcss/no-custom-classname": "off",
         "prettier/prettier": [
           "error",
           {

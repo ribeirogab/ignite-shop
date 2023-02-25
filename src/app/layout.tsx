@@ -1,9 +1,9 @@
 import '@/styles/globals.css';
 import { ReactNode } from 'react';
+import Image from 'next/image';
 import { Inter } from '@next/font/google';
 
 import logoSvg from '@/assets/logo.svg';
-import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'], weight: '400' });
 

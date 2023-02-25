@@ -9,6 +9,7 @@ export const Product = () => {
         group
         relative
         flex
+        h-full
         w-full
         cursor-pointer
         items-center

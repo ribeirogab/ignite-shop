@@ -5,13 +5,11 @@ export default function Home() {
   return (
     <main className="home-container flex gap-12">
       <Carousel
-        perSlide={2}
         items={[
-          <Product key={1} />,
-          <Product key={2} />,
-          <Product key={3} />,
-          <Product key={4} />,
-          <Product key={5} />,
+          { key: 1, element: <Product /> },
+          { key: 2, element: <Product /> },
+          { key: 3, element: <Product /> },
+          { key: 4, element: <Product /> },
         ]}
       />
     </main>

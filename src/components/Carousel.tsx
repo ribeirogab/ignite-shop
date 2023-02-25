@@ -1,54 +1,26 @@
-import { Fragment, ReactNode } from 'react';
+'use client';
+
+import 'keen-slider/keen-slider.min.css';
+import { ReactNode } from 'react';
+import { useKeenSlider } from 'keen-slider/react';
 
 type CarouselProps = {
-  items: ReactNode[];
-  perSlide?: number;
+  items: { key: string | number; element: ReactNode }[];
+  gap?: string;
 };
 
-const splitItems = ({ items, perSlide = 2 }: CarouselProps) => {
-  const itemsPerSlide: ReactNode[][] = [];
-
-  items.reverse();
-
-  while (items.length) {
-    itemsPerSlide.push(items.splice(0, perSlide));
-  }
-
-  return itemsPerSlide;
-};
-
-export const Carousel = (props: CarouselProps) => {
-  const itemsPerSlide = splitItems(props);
+export const Carousel = ({ items, gap = '3rem' }: CarouselProps) => {
+  const [sliderRef] = useKeenSlider({
+    slides: {
+      perView: 3,
+    },
+  });
 
   return (
-    <div className="carousel w-container">
-      {itemsPerSlide.map((items, index) => (
-        <div
-          id={`slide-${index + 1}`}
-          className="carousel-item relative w-full gap-8"
-          key={`${JSON.stringify(items)}-${index}`}
-        >
-          {items.map((item, itemIndex) => (
-            <Fragment key={`${JSON.stringify(item)}-${itemIndex}`}>
-              {item}
-            </Fragment>
-          ))}
-
-          <div className="absolute inset-x-5 top-1/2 flex -translate-y-1/2 justify-between">
-            {index === 0 ? (
-              <div />
-            ) : (
-              <a href={`#slide-${index}`} className="btn-circle btn">
-                ❮
-              </a>
-            )}
-
-            {items.length >= index + 1 && (
-              <a href={`#slide-${index + 2}`} className="btn-circle btn">
-                ❯
-              </a>
-            )}
-          </div>
+    <div ref={sliderRef} className={`keen-slider gap-[${gap}]`}>
+      {items.map((item) => (
+        <div key={item.key} className="keen-slider__slide">
+          {item.element}
         </div>
       ))}
     </div>
