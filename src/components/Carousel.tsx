@@ -1,8 +1,8 @@
 'use client';
 
 import 'keen-slider/keen-slider.min.css';
-import { ReactNode } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
+import { ReactNode } from 'react';
 
 type CarouselProps = {
   items: { key: string | number; element: ReactNode }[];

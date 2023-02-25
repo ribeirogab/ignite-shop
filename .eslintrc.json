@@ -1,25 +1,16 @@
 {
   "extends": [
-    "@rocketseat/eslint-config/react",
+    "@ribeirogab/eslint-config/react",
     "plugin:tailwindcss/recommended",
     "next/core-web-vitals"
   ],
   "overrides": [
     {
       "files": [
-        "*.ts",
-        "*.tsx",
-        "*.js",
-        "*.jsx"
+        "*"
       ],
       "rules": {
-        "tailwindcss/no-custom-classname": "off",
-        "prettier/prettier": [
-          "error",
-          {
-            "semi": true
-          }
-        ]
+        "tailwindcss/no-custom-classname": "off"
       }
     }
   ]
